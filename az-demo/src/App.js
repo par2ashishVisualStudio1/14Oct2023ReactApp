@@ -18,9 +18,23 @@ function App() {
           Learn React
         </a>
         <h1>Hello</h1>
+        <button onClick={callApi1}>Call API1</button>
+        <button onClick={callApi2}>Call API2</button>
       </header>
     </div>
   );
+}
+
+async function callApi1() {
+  fetch('https://par2ashishazure118oct.azurewebsites.net/api/webapi1', { method: 'GET' })
+    .then(data => data.json()) // Parsing the data into a JavaScript object
+    .then(json => alert(JSON.stringify(json))) // Displaying the stringified data in an alert popup
+}
+
+async function callApi2() {
+  fetch('https://par2ashishazure118octwebapi2.azurewebsites.net/api/webapi2', { method: 'GET' })
+    .then(data => data.json()) // Parsing the data into a JavaScript object
+    .then(json => alert(JSON.stringify(json))) // Displaying the stringified data in an alert popup
 }
 
 export default App;
